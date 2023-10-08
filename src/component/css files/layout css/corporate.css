@@ -1,0 +1,92 @@
+.cardd{
+    border: 0.1rem solid;
+  }
+  .cardd1{
+    border: 0.1rem solid;
+    padding: 10px;
+  }
+  .pic1{
+    background-image: url('../../../assects/corporate/pic1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover 0px 0px 0px;
+    font-weight: bold;
+    color: rgb(12, 12, 12);
+  }
+  .pic2{
+    background-image: url('../../../assects/corporate/pic2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover 0px 0px 0px;
+    font-weight: bold;
+    color: rgb(12, 12, 12);
+  }
+  .pic3{
+    background-image: url('../../../assects/corporate/pic2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover 0px 0px 0px;
+    font-weight: bold;
+    color: rgb(12, 12, 12);
+  }
+  .cc{
+  display: flex;
+  padding: 10px;
+  }
+  .im{
+    display: flex;
+  }
+  .un{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .cd3{
+    width: 50rem;
+    text-align: center;
+    font-size: 20px;
+    
+  }
+  .card-text-1{
+    background-color: whitesmoke;
+  
+  }
+  .i{
+    text-decoration: none;
+    color: black;
+  }
+  .pics1{
+    background-image: url('../../../assects/corporate/cc3.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .pics2{
+    background-image: url('../../../assects/corporate/cc4.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .pics3{
+    background-image: url('../../../assects/corporate/EN.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .con{
+    background-color: rgb(190, 216, 250);
+    padding-top: 20px;
+    
+  }
+  .m{
+    font-weight: bold;
+  }
+  .loanblock{
+    border: solid 1px;
+    background-color:rgb(233, 230, 230);
+  }
+  
+  
+  
+  .q{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }

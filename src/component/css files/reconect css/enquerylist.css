@@ -1,0 +1,29 @@
+.b1{
+    display: flex;
+    background-color: rgb(190, 210, 235);
+    margin: 10px;
+}
+.b2{
+    
+   padding: 10px;
+    background-color: rgb(190, 210, 235);
+    
+    
+}
+.btn1{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+}
+.btn1:hover{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+   
+}
+.si{
+    background-color: rgb(190, 210, 235);
+}
+label{
+    font-weight: 600;
+}

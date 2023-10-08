@@ -1,0 +1,19 @@
+
+.btn1{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+}
+.btn1:hover{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+   
+}
+
+.content{
+    text-align: center;
+    padding: 150px;
+    justify-content: center;
+    
+}

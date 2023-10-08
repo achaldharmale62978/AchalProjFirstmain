@@ -1,0 +1,50 @@
+.b1{
+    display: flex;
+    background-color: rgb(190, 210, 235);
+    margin: 0px;
+    padding: 0px;
+}
+.b2{
+    justify-content: center;
+    margin: 30px;
+    background-color: rgb(236, 213, 213);
+    margin: 0px;
+    /* padding: 10px; */
+    
+}
+
+.btn1{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    justify-content: center;
+    
+}
+.btn2{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    justify-content: center;
+    
+}
+.btn1:hover{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+   
+}
+.btn2:hover{
+    background-color: crimson;
+    color: black;
+    font-weight: 600;
+   
+}
+.si{
+    background-color:rgb(190, 210, 235);
+    margin: 0px;
+}
+label{
+    font-weight: 600;
+}

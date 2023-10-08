@@ -1,0 +1,121 @@
+{
+  "projdata": [
+    {
+      "fname": "achal",
+      "lname": "dharmale",
+      "bday": "2023-09-02",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 2
+    },
+    {
+      "fname": "achal",
+      "lname": "dharmale",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 3
+    },
+    {
+      "fname": "achal",
+      "lname": "",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 4
+    },
+    {
+      "fname": "achal",
+      "lname": "dharmale",
+      "bday": "2023-09-08",
+      "gender": "female",
+      "city": "pune",
+      "email": "achaldharmale62978@gmail.com",
+      "phnum": "7845263",
+      "pannum": "45632",
+      "aanum": "986532",
+      "add": "gjbn\n",
+      "id": 5
+    },
+    {
+      "fname": "",
+      "lname": "",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "rutu@gmail.com",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 6
+    },
+    {
+      "fname": "achal",
+      "lname": "",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 8
+    },
+    {
+      "fname": "bhwdgu",
+      "lname": "",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 9
+    },
+    {
+      "fname": "achal",
+      "lname": "dha",
+      "bday": "",
+      "gender": null,
+      "city": "",
+      "email": "",
+      "phnum": "",
+      "pannum": "",
+      "aanum": "",
+      "add": "",
+      "id": 10
+    },
+    {
+      "fname": "achal",
+      "lname": "dharmale",
+      "bday": "2023-09-02",
+      "gender": "female",
+      "city": "Delhi",
+      "email": "vijaybahe08@gmail.com",
+      "phnum": "1",
+      "pannum": "",
+      "aanum": "05623",
+      "add": "nkhi",
+      "id": 11
+    }
+  ]
+}

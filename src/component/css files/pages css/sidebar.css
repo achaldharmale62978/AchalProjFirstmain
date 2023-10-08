@@ -1,0 +1,16 @@
+.ii:hover{
+    background-color: rgb(190, 210, 235);
+}
+.ii{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    background-color: antiquewhite;
+
+}
+.sidebar{
+   padding: 10px;
+   margin-bottom: 40px;
+
+}
