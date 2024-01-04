@@ -1,0 +1,80 @@
+.ir1{
+    background-color: rgb(209, 225, 247);
+    background-size: cover;
+    margin: 0;
+    
+}
+.ir2{
+    margin-top: 30px;
+ background-color: white;
+ padding: 10px;
+}
+.ir3{
+    margin-top: 20px;
+background-color: white;
+padding: 10px;
+
+}
+.c{
+    background-color: lightsalmon;
+    border-radius: 19px;
+    color: black;
+    font-weight: 600;
+    /* padding-left: 80px; */
+}
+.c:hover{
+    background-color: lightsalmon;
+    border-color: black;
+}
+.r2{
+    font-size: 20px;
+}
+.u1:hover{
+    color: black;
+    font-weight: 700;
+    
+}
+.r1{
+    background-color: rgb(173, 195, 212);
+}
+.lo1{
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+.bt1{
+    margin-left: 70px;
+}
+.bt2:hover{
+    background-color: navy;
+    color: rgb(233, 233, 233);
+}
+.te1{
+    font-weight: 500px;
+    font-family:'Times New Roman', Times, serif;
+    padding-bottom: 0px;
+}
+.in{
+    padding-top: 0px;
+    margin-top: 0px;
+  
+}
+.ir4{
+    margin-top: 20px;
+    
+}
+.as{
+    padding-top: 100px;
+}
+.al{
+    text-decoration: none;
+    color: rgb(13, 3, 109);
+    font-weight: 700px;
+    font-size: 17px;
+}
+.im{
+background-image: url('../../../../assects/irate/istockphoto-1276974393-612x612.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+}

@@ -13,9 +13,9 @@ const Cmupdate = () => {
     async function fetchdata() {
         const result = await
             axios.get(`http://localhost:8090/registration/get/${registerId}`)
-       
 
-         result.data=result.data[0]
+
+        result.data = result.data[0]
 
         setValue('idr', result.data.idr)
         setValue('bfname', result.data.bfname)
@@ -47,55 +47,56 @@ const Cmupdate = () => {
 
         setValue('llamount', result.data.llamount)
         setValue('ltenure', result.data.ltenure)
-        setValue('lpamount',result.data.lpamount)
-        setValue('lramount',result.data.lramount)
-        setValue('lsta',result.data.lsta)
-        setValue('lremark',result.data.lremark)
-        
-        setValue('atype',result.data.atype)
-         setValue('abalance',result.data.abalance)
-          setValue('ahname',result.data.ahname) 
-         setValue('astatus',result.data.astatus)
-        setValue('aremark', result.data.aremark)
+        setValue('lpamount', result.data.lpamount)
+        setValue('lramount', result.data.lramount)
+        setValue('lsta', result.data.lsta)
+        setValue('lremark', result.data.lremark)
 
-        setValue('cname',result.data.cname)
-         setValue('cpost',result.data.cpost)
-          setValue('min',result.data.min) 
-         setValue('ain',result.data.ain)
+        setValue('atype', result.data.atype)
+        setValue('abalance', result.data.abalance)
+        setValue('aahname', result.data.aahname)
+        setValue('astatus', result.data.astatus)
+        setValue('anum', result.data.anum)
+
+        setValue('ccname', result.data.ccname)
+        setValue('cpost', result.data.cpost)
+        setValue('min', result.data.min)
+        setValue('ain', result.data.ain)
         setValue('cadd', result.data.cadd)
         setValue('ccity', result.data.ccity)
     }
 
 
     function savedata(data) {
-        axios.post(`http://localhost:8090/registration/cmupdate/${registerId}`, data)
+        axios.put(`http://localhost:8090/registration/cmupdate/${registerId}`, data)
         alert("data added")
         navigat('/cmlist')
-        console.log(data)
+       
     }
 
     useEffect(() => {
         fetchdata()
-    }, [])
+    },[])
     return (
         <>
-            <div className=''>
+            <div className='b1'>
 
-                <div className='b1'>
-                    <div className='  col-2 ' style={{ borderColor: 'white' }}>
+                
+                <div className='si'>
+                    <div className='sidebar  col-auto i1' style={{ backgroundColor: 'white', backgroundSize: 'cover' }}>
 
-                        <h4 style={{ fontWeight: 'bold' }} className='  '>Regional Executive</h4>
+                        <h5 style={{ fontWeight: 'bold' }} className=''>Credit Manager Exicutive </h5>
 
-                        <NavLink to='/enquery' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery</NavLink>
+                        {/* <NavLink to='/enquery' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery</NavLink>
 
-                        <NavLink to='/enquerylist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery List</NavLink>
+                        <NavLink to='/enquerylist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery List</NavLink> */}
 
-                        <NavLink to='/cibilstatus' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Cibil Status</NavLink>
+                        <NavLink to='/cmlist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Credit Manager <br/> Exicutive List</NavLink>
 
                         <NavLink to='/logout ' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Log Out</NavLink>
 
                     </div>
-
+                </div>    
 
 
                     <div className='b1   border bordered-secondary '>
@@ -125,24 +126,25 @@ const Cmupdate = () => {
                                     <label htmlFor='bday'>Birth Date : </label>
                                     <input id='bday' className='form-control' type='date' {...register('bbday')} />
                                 </div>
+
+                            </div>&ensp;
+                            <div className='row g-5'>
                                 <div className=' form-group col-3'>
                                     <label htmlFor='genderr'>Gender : </label>
                                     <br />
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" {...register('genderr')} />
-                                        <label className="form-check-label" for="inlineRadio1">Male</label>
+                                        <label className="form-check-label" htmlFor="inlineRadio1">Male</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female" {...register('genderr')} />
-                                        <label className="form-check-label" for="inlineRadio2">Female</label>
+                                        <label className="form-check-label" htmlFor="inlineRadio2">Female</label>
                                     </div><br />
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other" disabled {...register('genderr')} />
-                                        <label className="form-check-label" for="inlineRadio3">Other (disabled)</label>
+                                        <label className="form-check-label" htmlFor="inlineRadio3">Other (disabled)</label>
                                     </div>
                                 </div>
-                            </div>&ensp;
-                            <div className='row g-5'>
                                 <div className='col-2 form-group'>
                                     <label htmlFor='city'>City : </label>
                                     <input id='city' type='text' className='form-control' {...register('bcity')} />
@@ -155,12 +157,13 @@ const Cmupdate = () => {
                                     <label htmlFor='phnum'>Phone No : </label>
                                     <input id='phnum' type='number' className='form-control' {...register('bphnum')} />
                                 </div>
+
+                            </div><br />
+                            <div className='row g-5'>
                                 <div className='col-3 form-group'>
                                     <label htmlFor='pannum'>PanCard No : </label>
                                     <input id='pannum' type='text' className='form-control' {...register('bpannum')} />
                                 </div>
-                            </div><br />
-                            <div className='row g-5'>
                                 <div className='col-4 form-group'>
                                     <label htmlFor='aanum'>AdharCard No : </label>
                                     <input id='aanum' type='number' className='form-control' {...register('baanum')} />
@@ -272,9 +275,9 @@ const Cmupdate = () => {
                                     <input id='pamount' className='form-control' type='number' {...register('lpamount')} />
                                 </div>
                                 {/* <div className=' form-group  col-3'>
-                                    <label htmlFor='cname'>City Name : </label>
-                                    <input id='cname' className='form-control' type='text' {...register('bday')} />
-                                </div> */}
+                    <label htmlFor='cname'>City Name : </label>
+                    <input id='cname' className='form-control' type='text' {...register('bday')} />
+                    </div> */}
                             </div>&ensp;
                             <div className='row g-5'>
                                 <div className='col-3 form-group'>
@@ -306,13 +309,13 @@ const Cmupdate = () => {
                                 </div>
 
                                 <div className=' form-group  col-3'>
-                                    <label htmlFor='ahname'>Account Holder Name : </label>
-                                    <input id='ahname' className='form-control' type='text' {...register('aahname')} />
+                                    <label htmlFor='aahname'>Account Holder Name : </label>
+                                    <input id='aahname' className='form-control' type='text' {...register('aahname')} />
                                 </div>
                                 {/* <div className=' form-group  col-3'>
-                                    <label htmlFor='cname'>City Name : </label>
-                                    <input id='cname' className='form-control' type='text' {...register('bday')} />
-                                </div> */}
+                    <label htmlFor='cname'>City Name : </label>
+                    <input id='cname' className='form-control' type='text' {...register('bday')} />
+                    </div> */}
                             </div>&ensp;
                             <div className='row g-5'>
                                 <div className='col-3 form-group'>
@@ -324,9 +327,9 @@ const Cmupdate = () => {
                                     <input id='anum' className='form-control' type='number' {...register('anum')} />
                                 </div>
                                 {/* <div className='col-3 form-group'>
-                                    <label htmlFor='remark'>Remark : </label>
-                                    <input id='remark' type='number' className='form-control' {...register('phnum')} />
-                                </div> */}
+                    <label htmlFor='remark'>Remark : </label>
+                    <input id='remark' type='number' className='form-control' {...register('phnum')} />
+                    </div> */}
                             </div><br />
 
                             <hr />
@@ -339,8 +342,8 @@ const Cmupdate = () => {
                                     <input id='cname' className='form-control' type='text' {...register('ccname')} />
                                 </div>
                                 <div className='col-3 form-group '>
-                                    <label htmlFor='Post'>Company Post : </label>
-                                    <input id='Post' className='form-control' type='text' {...register('post')} />
+                                    <label htmlFor='cPost'>Company Post : </label>
+                                    <input id='cPost' className='form-control' type='text' {...register('cpost')} />
                                 </div>
 
                                 <div className=' form-group  col-3'>
@@ -348,9 +351,9 @@ const Cmupdate = () => {
                                     <input id='min' className='form-control' type='number' {...register('min')} />
                                 </div>
                                 {/* <div className=' form-group  col-3'>
-                                    <label htmlFor='cname'>City Name : </label>
-                                    <input id='cname' className='form-control' type='text' {...register('bday')} />
-                                </div> */}
+                    <label htmlFor='cname'>City Name : </label>
+                    <input id='cname' className='form-control' type='text' {...register('bday')} />
+                    </div> */}
                             </div>&ensp;
                             <div className='row g-5'>
                                 <div className='col-3 form-group'>
@@ -367,11 +370,6 @@ const Cmupdate = () => {
                                 </div>
                             </div><br />
 
-
-
-
-
-
                             &ensp;
                             <div className='row'>
                                 <button type='submit' className='btn btn1 col-3 offset-1'>Submit</button>&ensp;
@@ -383,15 +381,15 @@ const Cmupdate = () => {
 
                             {/* <div class="container"> */}
                             {/* <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                            <div class="col">Column</div>
-                            <div class="col">Column</div>
-                            <div class="col">Column</div>
-                            <div class="col">Column</div>
-                        </div> */}
+                                <div class="col">Column</div>
+                                <div class="col">Column</div>
+                                <div class="col">Column</div>
+                                <div class="col">Column</div>
+                            </div> */}
                             {/* </div> */}
                         </form>
                     </div>
-                </div>
+               
             </div>
         </>
     )

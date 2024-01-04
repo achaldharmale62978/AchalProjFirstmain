@@ -52,6 +52,7 @@
   .i{
     text-decoration: none;
     color: black;
+    
   }
   .pics1{
     background-image: url('../../../assects/corporate/cc3.jpeg');
@@ -90,3 +91,12 @@
     text-decoration: none;
     color: rgb(0, 0, 0);
   }
+  .logn{
+    color: black;
+  }
+  .logn:hover{
+    color: black;
+  }
+  .u1{
+    color: black;
+}

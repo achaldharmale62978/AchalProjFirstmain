@@ -99,7 +99,7 @@ connection.connect((error) => {
                 req.body.add,
                 userId
             ]
-
+            
 
             connection.query(q, values, (error, data) => {
                 if (error) {
@@ -151,10 +151,11 @@ connection.connect((error) => {
                 req.body.remark
             ]
             connection.query(q, values, (error, data) => {
-                if (error) {
+                if(error){
                     console.log(error)
                     return res.status(500).send({ error: "error while fetching error" })
-                } return res.json(data)
+                }
+                 return res.json(data)
 
             })
         })
@@ -220,6 +221,7 @@ connection.connect((error) => {
                 req.body.bpannum,
                 req.body.baanum,
                 req.body.badd,
+
                 req.body.hname,
                 req.body.sname,
                 req.body.aname,
@@ -227,6 +229,7 @@ connection.connect((error) => {
                 req.body.dname,
                 req.body.state,
                 req.body.zip,
+
                 req.body.honame,
                 req.body.stname,
                 req.body.aaname,
@@ -234,17 +237,20 @@ connection.connect((error) => {
                 req.body.diname,
                 req.body.st,
                 req.body.ziip,
+
                 req.body.llamount,
                 req.body.ltenure,
                 req.body.lpamount,
                 req.body.lramount,
                 req.body.lsta,
                 req.body.lremark,
+
                 req.body.atype,
                 req.body.abalance,
                 req.body.aahname,
                 req.body.astatus,
                 req.body.anum,
+
                 req.body.ccname,
                 req.body.cpost,
                 req.body.min,
@@ -283,7 +289,7 @@ connection.connect((error) => {
         app.put("/registration/cmupdate/:idr", (req, res) => {
 
             const registerId = req.params.idr;
-            const q = "UPDATE registration set `idr`= ?  , `bfname`= ? , `blname` = ? ,`bbday`=? , `genderr`=? , `bcity`=? ,`bemail` = ? , `bphnum`=? , `bpannum`=? , `baanum`=? , `badd`=? , `hname`= ? , `aaname` = ? ,`cname`=? , `dname`=? , `state`=? ,`zip` = ? , `honame`=? , `stname`=? , `aaname`=? , `ciname`=? , `diname`= ? , `st` = ? ,`ziip`=? , `llamount`=? , `ltenure`=? ,`lpamount` = ? , `lramount`=? , `lsta`=? , `lremark`=? , `atype`=? , `abalance`= ? , `aahname` = ? ,`astatus`=? , `anum`=? , `cname`=? ,`cpost` = ? , `min`=? , `ain`=? , `cadd`=? , `ccity`=?  WHERE idr=? "
+            const q = "UPDATE registration set `idr`= ?  , `bfname`= ? , `blname` = ? ,`bbday`=? , `genderr`=? , `bcity`=? ,`bemail` = ? , `bphnum`=? , `bpannum`=? , `baanum`=? , `badd`=? , `hname`= ? , `sname` = ? , `aname` = ? ,`cname`=? , `dname`=? , `state`=? ,`zip` = ? , `honame`=? , `stname`=? , `aaname`=? , `ciname`=? , `diname`= ? , `st` = ? ,`ziip`=? , `llamount`=? , `ltenure`=? ,`lpamount` = ? , `lramount`=? , `lsta`=? , `lremark`=? , `atype`=? , `abalance`= ? , `aahname` = ? ,`astatus`=? , `anum`=? , `ccname`=? ,`cpost` = ? , `min`=? , `ain`=? , `cadd`=? , `ccity`=?  WHERE idr=? "
 
 
             const registerdata = [
@@ -298,6 +304,7 @@ connection.connect((error) => {
                 req.body.bpannum,
                 req.body.baanum,
                 req.body.badd,
+
                 req.body.hname,
                 req.body.sname,
                 req.body.aname,
@@ -305,6 +312,7 @@ connection.connect((error) => {
                 req.body.dname,
                 req.body.state,
                 req.body.zip,
+
                 req.body.honame,
                 req.body.stname,
                 req.body.aaname,
@@ -312,17 +320,20 @@ connection.connect((error) => {
                 req.body.diname,
                 req.body.st,
                 req.body.ziip,
+
                 req.body.llamount,
                 req.body.ltenure,
                 req.body.lpamount,
                 req.body.lramount,
                 req.body.lsta,
                 req.body.lremark,
+
                 req.body.atype,
                 req.body.abalance,
-                req.body.ahname,
+                req.body.aahname,
                 req.body.astatus,
                 req.body.anum,
+
                 req.body.ccname,
                 req.body.cpost,
                 req.body.min,

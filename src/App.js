@@ -12,12 +12,14 @@ import Logout from './component/Recontent/Logout';
 import CibilStatus from './component/Recontent/CibilStatus';
 import Reupdate from './component/Recontent/Reupdate';
 import Redelete from './component/Recontent/Redelete';
+
 import Oepage from './component/OeModule/Oepage';
 import OeList from './component/OeModule/OeList';
+
 import CibilReg from './component/OeModule/CibilReg';
 import CibilDelete from './component/Recontent/CibilDelete';
-import Contact from './component/layout/UserNav2/Contact';
 
+import Contact from './component/layout/UserNav2/Contact';
 import Notification from './component/layout/UserNav2/Notification';
 import Oelogout from './component/OeModule/Oelogout';
 import Corporate from './component/layout/Corporate';
@@ -29,25 +31,31 @@ import Registration from './component/Recontent/Registration';
 import Cmdelete from './component/Cmmodule/Cmdelete';
 import Cmupdate from './component/Cmmodule/Cmupdate';
 
+import Email from './component/layout/UserNav2/Email';
+import Irate from './component/layout/UserNav2/navelements/Irate';
+import Services from './component/layout/UserNav2/navelements/Services';
+import Cmlogout from './component/Cmmodule/Cmlogout';
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-       
+
         <Routes>
+          
           <Route path='/' element={<Home />}></Route>
           <Route path='/home' element={<Home />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/corporate' element={<Corporate />}></Route>
 
-          <Route path='/contact' element={<Contact/>}></Route>
+         
 
-            {/* userNav2 */}
+          {/* userNav2 */}
 
-          {/* <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/email' element={<Email />}></Route>*/}
-          <Route path='/notification' element={<Notification />}></Route> 
-
+          {/* <Route path='/contact' element={<Contact />}></Route>*/}
+          <Route path='/email' element={<Email />}></Route>
+          <Route path='/notification' element={<Notification />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
 
           <Route path='/login' element={<Login />}></Route>
 
@@ -59,28 +67,32 @@ function App() {
           <Route path='/reupdate/:userId' element={<Reupdate />}></Route>
           <Route path='/redelete/:userId' element={<Redelete />}></Route>
 
+          {/* navelements */}
+          <Route path='/irate' element={<Irate />}></Route>
+          <Route path='/services' element={<Services/>}></Route>
+          
+          {/* cibil */}
           <Route path='/cibilstatus' element={<CibilStatus />}></Route>
-          <Route path='/cibildelete/:useId' element={<CibilDelete/>}></Route>
-
-          <Route path='/registration' element={<Registration/>}></Route>
-
+          <Route path='/cibildelete/:useId' element={<CibilDelete />}></Route>
+          <Route path='/registration' element={<Registration />}></Route>
 
           <Route path='/logout' element={<Logout />}></Route>
-          
+
 
           {/* oe */}
           <Route path='/oepage' element={<Oepage />}></Route>
           <Route path='/oelist' element={<OeList />}></Route>
-          <Route path='/cibilreg' element={<CibilReg/>}></Route>
-          <Route path='/Oelogout' element={<Oelogout/>}></Route>
-          {/* <Route path='/Oelogout' element={<Oelogout/>}></Route> */}
-          
+          <Route path='/cibilreg' element={<CibilReg />}></Route>
+          <Route path='/oelogout' element={<Oelogout />}></Route>
+
+
 
           {/* cm */}
-          <Route path='/cmpage' element={<Cmpage/>}></Route>
-          <Route path='/cmlist' element={<Cmlist/>}></Route>
-          <Route path='/cmupdate/:registerId' element={<Cmupdate/>}></Route>
-          <Route path='/cmdelete/:registerId' element={<Cmdelete/>}></Route>
+          <Route path='/cmpage' element={<Cmpage />}></Route>
+          <Route path='/cmlist' element={<Cmlist />}></Route>
+          <Route path='/cmupdate/:registerId' element={<Cmupdate />}></Route>
+          <Route path='/cmdelete/:registerId' element={<Cmdelete />}></Route>
+          <Route path='/cmlogout' element={<Cmlogout />}></Route>
 
 
         </Routes>

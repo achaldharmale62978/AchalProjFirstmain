@@ -57,14 +57,14 @@ const Home = () => {
           <div className='three'>
             <div class="container">
               <b className='m1'>Feature and Benefits</b>&ensp;
-              <div class="row rr i3">
-                <div class="col-3 order-last i3 offset-1 border rounded-pill">
+              <div class="row rr i3 ">
+                <div class="col-3 order-last i3 offset-1 border border-secondary border border-2 border rounded-pill">
                   <p style={{ fontSize: '40px' ,color:'blue',borderradiuspill:'50rem;,',borderWidth:'20px'}}>< TbCalendarDollar /> </p><p className='t6'>Loan upto 100% of On-Road Price</p>
                 </div>
-                <div class="col-3 offset-1 i3 border rounded-pill">
+                <div class="col-3 offset-1 i3 border border-secondary border border-2 border rounded-pill">
                   <p style={{ fontSize: '40px',color:'blue ',borderradiuspill:'50rem;' }}><FaHandHoldingDollar /></p><p className='t6'>Attractive Intrest Rate</p>
                 </div>
-                <div class="col-3 order-first i3 border rounded-pill">
+                <div class="col-3 order-first i3 border border-secondary border border-2 border rounded-pill">
                   <p style={{ fontSize: '40px',color:'blue' ,borderradiuspill:'50rem;'}}>< BiMoneyWithdraw /></p><p className='t6'>Loan upto 100% of On-Road Price</p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ const Enquery = () => {
         <div className='si'>
           <div className='sidebar  col-auto i1' style={{ backgroundColor: 'white', backgroundSize: 'cover' }}>
 
-            <h4 style={{ fontWeight: 'bold'  }} className='si'>Regional Executive</h4>
+            <h4 style={{ fontWeight: 'bold'  }} className=''>Regional Executive</h4>
 
             <NavLink to='/enquery' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery</NavLink>
 

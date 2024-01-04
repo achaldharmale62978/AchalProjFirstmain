@@ -27,7 +27,7 @@ const OeList = () => {
                 <div className='ssi'>
                     <div className='sidebar  col-10 i1' style={{ backgroundColor: 'white', backgroundSize: 'cover' }}>
 
-                        <h4 style={{ fontWeight: 'bold' }} className='si'>Operational Executive</h4>
+                        <h4 style={{ fontWeight: 'bold' }} className=''>Operational Executive</h4>
 
                         <NavLink to='/oelist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Operational Exicutive <br /> Enquery List</NavLink>
 
@@ -41,7 +41,7 @@ const OeList = () => {
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col " className='id table-light'>#</th>
+                                <th scope="col " className='id table-light'>ID</th>
                                 <th scope="col" className="table-primary">First Name</th>
                                 <th scope="col" className="table-light">Last Name</th>
                                 <th scope="col" className="table-primary">B-date</th>
@@ -61,7 +61,7 @@ const OeList = () => {
                                 user.map(obj => {
                                     return (
                                         <tr key={obj.id}>
-                                            <th scope="row"className="table-light">1</th>
+                                            <th scope="row"className="table-light">{obj.id}</th>
                                             <td className="table-primary">{obj.fname}</td>
                                             <td className="table-light">{obj.lname}</td>
                                             <td className="table-primary">{obj.bday}</td>

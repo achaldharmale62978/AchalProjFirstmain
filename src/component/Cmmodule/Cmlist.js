@@ -6,36 +6,84 @@ import '../css files/cmmodule/cmlist.css'
 import axios from 'axios'
 const Cmlist = () => {
 
-    const [usee,setusee]=useState([])
-
-    async function fetchdata(){
-        const result = await 
-        axios.get(`http://localhost:8090/registration`)
+    const [usee, setusee] = useState([])
+    const [serchTerm, setserchTerm] = useState('')
+    
+    async function fetchdata() {
+        const result = await
+            axios.get(`http://localhost:8090/registration`)
         setusee(result.data)
         console.log(result.data)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchdata()
-    },[])
+    }, [])
 
+    // const filterdata = usee.filter((users) => {
+    //     // return users.fname.toLowerCase().includes(serch.toLowerCase()) || users.lname.toLowerCase().includes(serch.toLowerCase())
+    //     return users.fname.toLowerCase().includes(serchTerm.toLowerCase()) || users.lname.toLowerCase().includes(serchTerm.toLowerCase());
+    // })
+
+    // const filterdata = usee.filter((users) => {
+    //     const firstName = users.fname || ''; // default to an empty string if undefined
+    //     const lastName = users.lname || '';
+    //     return users.firstName.toUpperCase().includes(serchTerm.toUpperCase()) || users.lastName.toUpperCase().includes(serchTerm.toUpperCase());
+    // }) 
+    const filterdata = usee.filter((users) => {
+        const firstName = users.fname ? users.fname.toLowerCase() : '';
+        const lastName = users.lname ? users.lname.toLowerCase() : '';
+    
+        return firstName.includes(serchTerm.toLowerCase()) || lastName.includes(serchTerm.toLowerCase());
+    });
     
 
     return (
         <>
-
+            <div>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        {/* <img src={img} style={{fontSize:'10px'}}></img> */}
+                        <h4 style={{ fontWeight: 'bold' }} className=''>Credit Manager Exicutive</h4>
+                        <a href='#' class="navbar-brand" ></a>
+                        <form class="d-flex col-3" style={{ textAlign: 'center' }}>
+                            <input class="form-control me-2 "
+                                type="search" 
+                                placeholder=" ....Search....." aria-label="Search"
+                                value={serchTerm}
+                                onChange={(e) => setserchTerm(e.target.value)} />
+                            {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
+                        </form>
+                    </div>
+                </nav>
+            </div>
             <div className='b1'>
 
+                {/* <div>
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="container-fluid">
+                           
+                            <h4 style={{ fontWeight: 'bold' }} className=''>Credit Manager Exicutive</h4>
+                            <a class="navbar-brand"></a>
+                            <form class="d-flex col-3" style={{ textAlign: 'center' }}>
+                                <input class="form-control me-2 " type="search" placeholder=" ....Search....." aria-label="Search"
+                                    value={serch}
+                                    onChange={(e) => setserch(e.target.value)} />
+                               
+                            </form>
+                        </div>
+                    </nav>
+                </div> */}
                 <div className='si'>
                     <div className='sidebar  col-auto i1' style={{ backgroundColor: 'white', backgroundSize: 'cover' }}>
 
-                        <h5 style={{ fontWeight: 'bold' }} className='si'>Corporate Exicutive </h5>
+                        <h5 style={{ fontWeight: 'bold' }} className=''>Credit Manager Exicutive </h5>
 
                         {/* <NavLink to='/enquery' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery</NavLink>
 
                         <NavLink to='/enquerylist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Enquery List</NavLink> */}
 
-                        <NavLink to='/cmlist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Corporate Exicutive List</NavLink>
+                        <NavLink to='/cmlist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Credit Manager Exicutive List</NavLink>
 
                         <NavLink to='/logout ' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Log Out</NavLink>
 
@@ -44,10 +92,10 @@ const Cmlist = () => {
 
                 <div className='b2 '>
                     <div>
-                    <h5 className='r col-12'>Basic Information :</h5>
+                        <h5 className='r col-12'>Basic Information :</h5>
                         <table className="table table-bordered">
                             <thead>
-                               
+
                                 <tr>
                                     <th scope="col " className="table-light">ID</th>
                                     <th scope="col" className="table-primary">First Name</th>
@@ -67,7 +115,7 @@ const Cmlist = () => {
                             </thead>
                             <tbody>
                                 {
-                                    usee.map(obj => {
+                                    filterdata.map(obj => {
                                         return (
                                             <tr key={obj.idr}>
                                                 <td>{obj.idr}</td>
@@ -81,8 +129,12 @@ const Cmlist = () => {
                                                 <td>{obj.bpannum}</td>
                                                 <td>{obj.baanum}</td>
                                                 <td>{obj.badd}</td>
-                                                <td><GrUpdate /></td>
-                                                <td><AiFillDelete /></td>
+                                                <td>
+                                                    <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                </td>
+                                                <td>
+                                                    <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                </td>
 
                                             </tr>
                                         )
@@ -94,10 +146,10 @@ const Cmlist = () => {
                     </div>
 
                     <div>
-                    <h5 className='r col-12'>Permanent Address :</h5>
+                        <h5 className='r col-12'>Permanent Address :</h5>
                         <table className="table table-bordered">
                             <thead>
-                               
+
                                 <tr>
 
                                     <th scope="col" className="table-primary">House No.</th>
@@ -114,7 +166,7 @@ const Cmlist = () => {
                             </thead>
                             <tbody>
                                 {
-                                    usee.map(obj => {
+                                    filterdata.map(obj => {
                                         return (
                                             <tr >
                                                 <td>{obj.hname}</td>
@@ -124,8 +176,12 @@ const Cmlist = () => {
                                                 <td>{obj.dname}</td>
                                                 <td>{obj.state}</td>
                                                 <td>{obj.zip}</td>
-                                                <td><GrUpdate /></td>
-                                                <td><AiFillDelete /></td>
+                                                <td>
+                                                    <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                </td>
+                                                <td>
+                                                    <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                </td>
                                             </tr>
                                         )
                                     })
@@ -134,10 +190,10 @@ const Cmlist = () => {
                             </tbody>
                         </table>
                         <div>
-                        <h5 className='r col-12'>Local Address :</h5>
+                            <h5 className='r col-12'>Local Address :</h5>
                             <table className="table table-bordered">
                                 <thead>
-                                    
+
                                     <tr>
 
                                         <th scope="col" className="table-primary">House No.</th>
@@ -154,7 +210,7 @@ const Cmlist = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        usee.map(obj => {
+                                        filterdata.map(obj => {
                                             return (
                                                 <tr>
                                                     <td>{obj.honame}</td>
@@ -164,8 +220,12 @@ const Cmlist = () => {
                                                     <td>{obj.diname}</td>
                                                     <td>{obj.st}</td>
                                                     <td>{obj.ziip}</td>
-                                                    <td><GrUpdate /></td>
-                                                    <td><AiFillDelete /></td>
+                                                    <td>
+                                                        <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                    </td>
+                                                    <td>
+                                                        <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                    </td>
                                                 </tr>
                                             )
                                         })
@@ -175,10 +235,10 @@ const Cmlist = () => {
                             </table>
 
                             <div>
-                            <h5 className='r col-12'>Loan Information :</h5>
+                                <h5 className='r col-12'>Loan Information :</h5>
                                 <table className="table table-bordered">
                                     <thead>
-                                        
+
                                         <tr>
 
                                             <th scope="col" className="table-primary">Loan Amount</th>
@@ -194,7 +254,7 @@ const Cmlist = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            usee.map(obj => {
+                                           filterdata.map(obj => {
                                                 return (
                                                     <tr>
                                                         <td>{obj.llamount}</td>
@@ -203,8 +263,12 @@ const Cmlist = () => {
                                                         <td>{obj.lramount}</td>
                                                         <td>{obj.lsta}</td>
                                                         <td>{obj.lremark}</td>
-                                                        <td><GrUpdate /></td>
-                                                        <td><AiFillDelete /></td>
+                                                        <td>
+                                                            <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                        </td>
+                                                        <td>
+                                                            <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                        </td>
                                                     </tr>
                                                 )
                                             })
@@ -213,10 +277,10 @@ const Cmlist = () => {
                                 </table>
 
                                 <div>
-                                <h5 className='r col-12'>Account Details :</h5>
+                                    <h5 className='r col-12'>Account Details :</h5>
                                     <table className="table table-bordered">
                                         <thead>
-                                            
+
                                             <tr>
 
                                                 <th scope="col" className="table-primary">Account Type</th>
@@ -232,7 +296,7 @@ const Cmlist = () => {
                                         </thead>
                                         <tbody>
                                             {
-                                                usee.map(obj => {
+                                                filterdata.map(obj => {
                                                     return (
                                                         <tr>
                                                             <td>{obj.atype}</td>
@@ -240,8 +304,12 @@ const Cmlist = () => {
                                                             <td>{obj.aahname}</td>
                                                             <td>{obj.astatus}</td>
                                                             <td>{obj.anum}</td>
-                                                            <td><GrUpdate /></td>
-                                                            <td><AiFillDelete /></td>
+                                                            <td>
+                                                                <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                            </td>
+                                                            <td>
+                                                                <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                            </td>
                                                         </tr>
                                                     )
                                                 })
@@ -251,10 +319,10 @@ const Cmlist = () => {
                                     </table>
 
                                     <div>
-                                    <h5 className='r col-12'>Company Information :</h5>
+                                        <h5 className='r col-12'>Company Information :</h5>
                                         <table className="table table-bordered">
                                             <thead>
-                                               
+
                                                 <tr>
 
                                                     <th scope="col" className="table-primary">Company Name</th>
@@ -270,7 +338,7 @@ const Cmlist = () => {
                                             </thead>
                                             <tbody>
                                                 {
-                                                    usee.map(obj => {
+                                                    filterdata.map(obj => {
                                                         return (
                                                             <tr>
                                                                 <td>{obj.ccname}</td>
@@ -279,8 +347,12 @@ const Cmlist = () => {
                                                                 <td>{obj.ain}</td>
                                                                 <td>{obj.cadd}</td>
                                                                 <td>{obj.ccity}</td>
-                                                                <td><GrUpdate /></td>
-                                                                <td><AiFillDelete /></td>
+                                                                <td>
+                                                                    <NavLink to={`/cmupdate/${obj.idr}`}><GrUpdate /></NavLink>
+                                                                </td>
+                                                                <td>
+                                                                    <NavLink to={`/cmdelete/${obj.idr}`}><AiFillDelete /></NavLink>
+                                                                </td>
                                                             </tr>
                                                         )
                                                     })

@@ -14,7 +14,7 @@ const Oepage = () => {
 
                 <NavLink to='/oelist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Operational Exicutive Enquery List</NavLink>
 
-                <NavLink to='/logout ' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Log Out</NavLink>
+                <NavLink to='/oelogout ' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Log Out</NavLink>
 
             </div>
 

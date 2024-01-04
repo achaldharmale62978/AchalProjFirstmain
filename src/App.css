@@ -9,7 +9,7 @@
 
 }
 .t{
-    padding-left: 600px;
+    padding-left: 550px;
     
 }
 
@@ -53,6 +53,12 @@
     color: black;
 
 }
+.logn{
+    color: black;
+}
 .logn:hover{
+    color: black;
+}
+.n1{
     color: black;
 }

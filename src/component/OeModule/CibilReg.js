@@ -23,7 +23,7 @@ const CibilReg = () => {
                 <div className='bb11'>
                     <div className='sidebar  col-auto i1' style={{ backgroundColor: 'white', backgroundSize: 'cover' }}>
 
-                        <h4 style={{ fontWeight: 'bold',backgroundColor:'white' }} className='si'>Operational Executive</h4>
+                        <h4 style={{ fontWeight: 'bold',backgroundColor:'white' }} className=''>Operational Executive</h4>
 
                         <NavLink to='/oelist' className='ii ' style={{ fontWeight: 'bold', fontSize: '20px' }}>Operational Exicutive <br /> Enquery List</NavLink>
 
