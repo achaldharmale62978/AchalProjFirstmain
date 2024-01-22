@@ -77,6 +77,8 @@ const Cmupdate = () => {
     useEffect(() => {
         fetchdata()
     },[])
+
+    
     return (
         <>
             <div className='b1'>
